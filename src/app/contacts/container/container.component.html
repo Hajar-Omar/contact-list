@@ -1,5 +1,22 @@
-<a routerLink="" title="vodafone">
-    <img src="assets/images/vodafone_logo.svg" alt="vodafone logo">
-</a>
-
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="row n-gutters d-flex py-3">
+    <div class="col-12 col-md-3">
+      <a routerLink="" title="vodafone">
+        <img src="assets/images/vodafone_logo.svg" alt="vodafone logo" />
+      </a>
+    </div>
+    <div class="col-12 offset-md-4 col-md-5 align-items-center d-flex">
+      <div class="form-group m-0 w-100">
+        <input
+          type="email"
+          class="form-control"
+          #search="ngModel"
+          [(ngModel)]="searchText"
+          aria-label="Search for contact"
+          placeholder="Search for contact"
+        />
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

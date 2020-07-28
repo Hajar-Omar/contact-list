@@ -1,0 +1,26 @@
+body {
+  color: $black;
+}
+img {
+  max-width: 100%;
+}
+.red-line {
+  background-color: $primar-color;
+}
+.title {
+  color: white;
+  background-color: $black;
+}
+.grey-color {
+  color: #979eb3;
+}
+.font-13 {
+  font-size: 13px;
+}
+.cursor {
+  cursor: pointer;
+}
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: $primar-color;
+}

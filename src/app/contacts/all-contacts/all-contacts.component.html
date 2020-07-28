@@ -1,1 +1,30 @@
-<p>all-contacts works!</p>
+<div class="row n-gutters d-flex my-5">
+  <div class="d-flex flex-column align-items-center w-100 mb-5">
+    <h2><a class="cursor" (click)="resetAllContacts()">Contacts</a></h2>
+    <hr class="red-line m-0" />
+  </div>
+  <div
+    class="letters row n-gutters d-flex justify-content-center w-100 mb-4 mt-2"
+  >
+    <h4 class="my-0 mx-3" *ngFor="let letter of lettersList">
+      <a (click)="filter(letter)">{{ letter }}</a>
+    </h4>
+  </div>
+  <div class="d-flex justify-content-center w-100">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+  </div>
+  <div class="w-100 d-flex flex-wrap">
+    <div
+      class="col-12 col-sm-6 col-md-4 my-3"
+      *ngFor="let contact of filteredContacts"
+    >
+      <div class="d-flex flex-column align-items-center contact-box">
+        <p class="title m-0 p-3 w-100 text-center">
+          {{ contact.first_name }} {{ contact.last_name }}
+        </p>
+        <span class="pt-3 pb-1 grey-color font-13">{{ contact.email }}</span>
+        <span class="pb-3 grey-color font-13">{{ contact.phone }}</span>
+      </div>
+    </div>
+  </div>
+</div>
