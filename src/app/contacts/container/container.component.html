@@ -5,13 +5,18 @@
         <img src="assets/images/vodafone_logo.svg" alt="vodafone logo" />
       </a>
     </div>
-    <div class="col-12 offset-md-4 col-md-5 align-items-center d-flex">
+    <div
+      class="col-12 offset-md-4 col-md-5 align-items-center d-none d-sm-flex"
+    >
       <div class="form-group m-0 w-100">
         <input
           type="email"
           class="form-control"
           #search="ngModel"
           [(ngModel)]="searchText"
+          (ngModelChange)="emitSearchText()"
+          autocomplete="off"
+          name="search"
           aria-label="Search for contact"
           placeholder="Search for contact"
         />

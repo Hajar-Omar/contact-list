@@ -1,1 +1,82 @@
-<p>create-contact works!</p>
+<div class="mh-70">
+  <div class="row n-gutters d-flex my-5">
+    <div class="d-flex flex-column align-items-center w-100 mb-5">
+      <h2 class="page-title">Add New Contact</h2>
+      <hr class="red-line m-0" />
+    </div>
+
+    <form [formGroup]="newContactForm" class="w-100">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          autocomplete="off"
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Enter Name"
+          formControlName="name"
+        />
+        <div
+          class="feedback"
+          *ngIf="submitted && newContactForm.controls.name.errors"
+        >
+          <mat-error *ngIf="newContactForm.controls.name.errors.required">
+            Name is required
+          </mat-error>
+          <mat-error *ngIf="newContactForm.controls.name.errors.pattern">
+            Name field should have only letters
+          </mat-error>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input
+          autocomplete="off"
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Enter Email"
+          formControlName="email"
+        />
+        <div
+          class="feedback"
+          *ngIf="submitted && newContactForm.controls.email.errors"
+        >
+          <mat-error *ngIf="newContactForm.controls.email.errors.required">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="newContactForm.controls.email.errors.email">
+            Please enter a valid email
+          </mat-error>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phone"
+          autocomplete="off"
+          placeholder="Enter Phone"
+          formControlName="phone"
+        />
+        <div
+          class="feedback"
+          *ngIf="submitted && newContactForm.controls.phone.errors"
+        >
+          <mat-error *ngIf="newContactForm.controls.phone.errors.required">
+            Phone is required
+          </mat-error>
+          <mat-error *ngIf="newContactForm.controls.phone.errors.pattern">
+            Please enter a valid Egyptian phone number
+          </mat-error>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-5">
+        <button class="btn btn-default px-3" (click)="addContact()">
+          Add Contact
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

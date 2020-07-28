@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { ContactsService } from "src/app/core/services/contacts/contacts.service";
 import { IContact } from "src/app/core/models/contact";
+import { SearchService } from "src/app/core/services/search/search.service";
 
 @Component({
   selector: "app-all-contacts",
@@ -15,10 +16,18 @@ export class AllContactsComponent implements OnInit {
 
   loading = true;
 
-  constructor(private contactsService: ContactsService) {}
+  searchText: string = "";
+
+  selectedLetter: string; // to handle ngclass active filter letter
+
+  constructor(
+    private contactsService: ContactsService,
+    private searchService: SearchService
+  ) {}
 
   ngOnInit() {
     this.loadContacts();
+    this.search();
   }
 
   // load all contacts list
@@ -34,21 +43,25 @@ export class AllContactsComponent implements OnInit {
         if (this.lettersList.indexOf(e.first_name[0]) == -1)
           this.lettersList.push(e.first_name[0]);
       });
-      console.log(this.lettersList);
+      this.lettersList.sort();
     });
   }
 
   // filter the contacts list by letter
   filter(letter: string) {
     this.filteredContacts = [];
-    this.filteredContacts = this.contacts.filter((e) => {
-      return e.first_name[0] == letter;
-    });
+    this.filteredContacts = this.contacts.filter(
+      (e) => e.first_name[0] == letter
+    );
   }
 
   // reset all contacts list after filtering
   resetAllContacts() {
     this.filteredContacts = [];
     this.contacts.map((e) => this.filteredContacts.push(e));
+  }
+
+  search() {
+    this.searchService.searchTextObs.subscribe((d) => (this.searchText = d));
   }
 }

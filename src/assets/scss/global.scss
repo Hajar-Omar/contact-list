@@ -6,10 +6,15 @@ img {
 }
 .red-line {
   background-color: $primar-color;
+  height: 2px;
+  width: 40px;
 }
 .title {
   color: white;
   background-color: $black;
+}
+.page-title {
+  font-family: "OpenSans-Bold";
 }
 .grey-color {
   color: #979eb3;
@@ -23,4 +28,26 @@ img {
 .mat-progress-spinner circle,
 .mat-spinner circle {
   stroke: $primar-color;
+}
+
+.mat-flat-button.mat-accent,
+.mat-raised-button.mat-accent,
+.mat-fab.mat-accent,
+.mat-mini-fab.mat-accent {
+  background-color: $primar-color;
+}
+.mat-fab.cdk-focused {
+  outline: none;
+}
+.mat-error {
+  font-size: 13px;
+}
+.btn.btn-default{
+  border: 1px solid;
+}
+.mh-70{
+  min-height: 70vh;
+}
+.letters a.active, .letters a:hover{
+  color: $primar-color;
 }
