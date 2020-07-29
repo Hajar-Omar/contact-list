@@ -15,7 +15,7 @@ export class ViewContactComponent implements OnInit {
   contact: IContact;
   editContactForm: FormGroup;
 
-  editMode = false;
+  editMode = false; // to handle edit mode in place of the view mode
 
   constructor(
     private contactsService: ContactsService,
@@ -27,6 +27,9 @@ export class ViewContactComponent implements OnInit {
     this.loadContactDetails();
   }
 
+  /*
+   ** @description filter in contacts list to get contact item by its id
+   **/
   loadContactDetails() {
     this.contactsService.getContacts().subscribe((d) => {
       this.contact = d.result.find(

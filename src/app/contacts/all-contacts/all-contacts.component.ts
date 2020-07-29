@@ -65,6 +65,7 @@ export class AllContactsComponent implements OnInit {
     this.contacts.map((e) => this.filteredContacts.push(e));
   }
 
+  // search in the contacts list
   search() {
     this.searchService.searchTextObs.subscribe((d) => (this.searchText = d));
   }

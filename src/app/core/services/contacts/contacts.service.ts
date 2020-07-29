@@ -10,6 +10,9 @@ import { environment } from "src/environments/environment";
 export class ContactsService {
   constructor(private httpClient: HttpClient) {}
 
+  /*
+   ** @description get all available contacts from the json file
+   **/
   getContacts(): Observable<IContactRes> {
     return this.httpClient.get<IContactRes>(
       `${environment.baseUrl}contacts.json`

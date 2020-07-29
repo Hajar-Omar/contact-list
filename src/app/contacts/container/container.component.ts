@@ -15,6 +15,9 @@ export class ContainerComponent implements OnInit {
     this.emitSearchText();
   }
 
+  /*
+   ** @description emit search text ,passing it to the sevice,to search with it
+   **/
   emitSearchText() {
     this.searchService.emitSearchText(this.searchText);
   }

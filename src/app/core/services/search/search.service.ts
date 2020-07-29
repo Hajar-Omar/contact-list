@@ -9,6 +9,9 @@ export class SearchService {
 
   constructor() {}
 
+  /*
+   ** @description emit search text to search with it
+   **/
   emitSearchText(searchText: string) {
     this.searchTextObs.next(searchText);
   }
