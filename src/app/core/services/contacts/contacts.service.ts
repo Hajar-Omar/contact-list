@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { IContactRes } from "../../models/contact";
+import { IContactRes, IContact } from "../../models/contact";
 import { environment } from "src/environments/environment";
 
 @Injectable({

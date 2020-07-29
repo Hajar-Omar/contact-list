@@ -10,18 +10,18 @@
       class="letters row n-gutters d-flex justify-content-center w-100 mb-4 mt-2"
     >
       <h4 class="my-0 mx-3" *ngFor="let letter of lettersList">
-        <a (click)="selectedLetter = letter;filter(letter)" [ngClass]="{'active' : selectedLetter == letter}">{{ letter }}</a>
+        <a (click)="selectedLetter = letter;filter(letter)" class="hvr-grow" [ngClass]="{'active' : selectedLetter == letter}">{{ letter }}</a>
       </h4>
     </div>
     <div class="d-flex justify-content-center w-100">
       <mat-spinner *ngIf="loading"></mat-spinner>
     </div>
     <div class="w-100 d-flex flex-wrap">
-      <div
-        class="col-12 col-sm-6 col-md-4 my-3"
+      <div @fadeInAnimation
+        class="col-12 col-sm-6 col-md-4 my-3" [routerLink]="['../view-contact', contact.id]"
         *ngFor="let contact of filteredContacts | filter: searchText"
       >
-        <div class="d-flex flex-column align-items-center contact-box">
+        <div class="d-flex flex-column align-items-center contact-box cursor hvr-underline-from-center">
           <p class="title m-0 p-3 w-100 text-center">
             {{ contact.first_name }} {{ contact.last_name }}
           </p>

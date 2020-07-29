@@ -42,12 +42,38 @@ img {
 .mat-error {
   font-size: 13px;
 }
-.btn.btn-default{
+.btn.btn-default {
   border: 1px solid;
 }
-.mh-70{
+.mh-70 {
   min-height: 70vh;
 }
-.letters a.active, .letters a:hover{
+.letters a.active,
+.letters a:hover {
   color: $primar-color;
+}
+
+body *:focus {
+  outline: none;
+}
+
+form.contact-form-view:not(.edit-mode) {
+  input {
+    border: none;
+    pointer-events: none;
+    color: $primar-color;
+    &#name {
+      color: $black;
+    }
+  }
+  .delete-btn {
+    color: $primar-color;
+    border-color: $primar-color;
+    &:hover {
+      color: white;
+    }
+  }
+}
+label {
+  color: #6f6f6f;
 }

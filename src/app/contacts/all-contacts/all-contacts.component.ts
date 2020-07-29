@@ -1,12 +1,16 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ContactsService } from "src/app/core/services/contacts/contacts.service";
 import { IContact } from "src/app/core/models/contact";
 import { SearchService } from "src/app/core/services/search/search.service";
+import { fadeInAnimation } from "src/app/core/animations/fadeIn.animation";
 
 @Component({
   selector: "app-all-contacts",
   templateUrl: "./all-contacts.component.html",
   styleUrls: ["./all-contacts.component.scss"],
+  animations: [fadeInAnimation],
+  // attach the fade in animation to the host (root) element of this component
+  host: { "[@fadeInAnimation]": "" },
 })
 export class AllContactsComponent implements OnInit {
   contacts: IContact[] = [];
