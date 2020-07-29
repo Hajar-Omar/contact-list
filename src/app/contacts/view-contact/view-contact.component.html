@@ -2,7 +2,8 @@
   <div class="row n-gutters d-flex my-5">
     <div class="d-flex flex-column align-items-center w-100 mb-5">
       <h2 class="page-title">
-        {{ contact.first_name }} {{ contact.last_name }}'s Profile
+        <span *ngIf="editMode">Edit </span>
+        <span>{{ contact.first_name }} {{ contact.last_name }}'s Profile</span>
       </h2>
       <hr class="red-line m-0" />
     </div>

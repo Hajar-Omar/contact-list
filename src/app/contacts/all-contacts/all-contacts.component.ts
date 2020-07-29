@@ -63,6 +63,7 @@ export class AllContactsComponent implements OnInit {
   resetAllContacts() {
     this.filteredContacts = [];
     this.contacts.map((e) => this.filteredContacts.push(e));
+    this.selectedLetter = "";
   }
 
   // search in the contacts list

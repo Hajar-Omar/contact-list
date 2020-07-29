@@ -1,6 +1,30 @@
-# ContactList
+# Contacts List
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+
+![all contacts list](https://i.ibb.co/q7xBPdH/all.png)
+
+## Other Pages ( views )
+
+#### Home (Filter view with unique letter in the list)
+
+![Home filter](https://i.ibb.co/Tc0dFc9/filter.png)
+
+#### Home (in mobile)
+
+![Home responsive](https://i.ibb.co/ZT7PfZV/res.png)
+
+#### Add New Contact
+
+![add contact](https://i.ibb.co/bmNhS5k/add.png)
+
+#### Contact Profile
+
+![contact profile](https://i.ibb.co/mzvNX0V/contact.png)
+
+#### Edit Contact Profile
+
+![edit profile](https://i.ibb.co/fFWrQYr/edit.png)
 
 ## Development server
 
@@ -18,10 +42,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Code Coverage Summary
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![Code Coverage Summary](https://i.ibb.co/wp5jsGj/unit-test.png)
